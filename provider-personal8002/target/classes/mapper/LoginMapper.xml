@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="hellhoyun.cn.college.dao.LoginDao">
+    <!--查找账号密码-->
+    <select id="selectUser" parameterType="String" resultType="helloyun.cn.college.entity.Users">
+        select * from users where User_Phone=#{User_Phone};
+    </select>
+    <!--注册学生信息-->
+    <insert id="insertUsers" parameterType="helloyun.cn.college.entity.Users" useGeneratedKeys="true" keyProperty="User_Id">
+        insert into users(User_Name,User_Password,User_Phone,User_Unit,User_StatusId,School_Id)
+            values(#{User_Name},#{User_Password},#{User_Phone},#{User_Unit},#{User_StatusId},#{School_Id});
+    </insert>
+</mapper>
+

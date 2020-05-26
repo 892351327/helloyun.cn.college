@@ -1,0 +1,28 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: personal-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.3.99:8848 #配置nacos服务中心地址
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.3.99:3306/ucom?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: helloyun.cn.college.entity  #所有entity的包
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+

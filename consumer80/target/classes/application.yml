@@ -1,0 +1,13 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: nacos-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.3.99:8848
+
+server-url:
+  nacos-user-service: http://payment-service
